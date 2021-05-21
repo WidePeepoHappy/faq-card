@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+$gradientTop: hsl(273, 75%, 66%);
+$gradientBottom: hsl(240, 73%, 65%);
+
+$textMain: hsl(238, 29%, 16%);
+$textHover: hsl(14, 88%, 65%);
+$textSecondary: hsl(240, 6%, 50%);
+$dividers: hsl(240, 5%, 91%);
+
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+  background: linear-gradient($gradientTop, $gradientBottom);
+}
+
+.card-box-container {
+  position: relative;
+  @media (min-width: 60rem) {
+    height: 32rem;
+  }
+  .box {
+    display: none;
+    @media (min-width: 60rem) {
+      display: block;
+      position: absolute;
+      z-index: 100;
+      left: -5.8rem;
+      top: 13rem;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  width: 327px;
+  margin: 138px auto 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.3);
+  background: white url(../images/bg-pattern-mobile.svg) 50% 0 no-repeat;
+
+  @media (min-width: 60rem) {
+    width: 60rem;
+    height: 32rem;
+    flex-direction: row;
+    overflow: hidden;
+    margin: 0;
+    background: white url(../images/bg-pattern-desktop.svg) -36rem -18rem
+      no-repeat;
+  }
+
+  &__woman {
+    margin-top: -6.7rem;
+    margin-right: 2rem;
+
+    @media (min-width: 60rem) {
+      margin-left: -5rem;
+      margin-top: 0;
+      margin-right: 7rem;
+    }
+  }
+
+  &__text-content {
+    min-height: 27rem;
+    &--header {
+      margin: 3rem 0 2.3rem;
+      text-align: center;
+      font-size: 2.5em;
+      @media (min-width: 60rem) {
+        text-align: start;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+    &--list {
+      list-style: none;
+      padding: 0 1rem 3rem;
+      margin: 0;
+      min-width: 280px;
+
+      @media (min-width: 60rem) {
+        width: 21rem;
+        padding: 0;
+      }
+
+      hr {
+        border: 0;
+        border-top: 1px solid $dividers;
+        margin: 0;
+      }
+
+      &--item {
+        a {
+          text-decoration: none;
+          color: $textMain;
+          font-size: 1.125em;
+          padding: 1.25rem 2rem 1.25rem 0;
+          position: relative;
+          display: block;
+          outline: none;
+
+          &::after {
+            content: url(../images/icon-arrow-down.svg);
+            position: absolute;
+            right: 0;
+
+            transition: all 0.3s;
+          }
+
+          &:hover {
+            color: $textHover;
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:focus {
+            font-weight: 700;
+          }
+
+          &:focus::after {
+            transform: rotate(180deg);
+          }
+
+          &:focus ~ p {
+            display: block;
+            max-width: 33ch;
+            color: $textSecondary;
+            margin-top: 0;
+
+            @media (min-width: 60rem) {
+              max-width: 45ch;
+            }
+          }
+        }
+
+        p {
+          display: none;
+          line-height: 1.5em;
+        }
+
+        img {
+          float: right;
+        }
+      }
+    }
+  }
+}

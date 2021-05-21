@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background: linear-gradient(#af67e9, #6565e7);
+}
+
+.card-box-container {
+  position: relative;
+}
+
+@media (min-width: 60rem) {
+  .card-box-container {
+    height: 32rem;
+  }
+}
+
+.card-box-container .box {
+  display: none;
+}
+
+@media (min-width: 60rem) {
+  .card-box-container .box {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    left: -5.8rem;
+    top: 13rem;
+  }
+}
+
+.card {
+  position: relative;
+  width: 327px;
+  margin: 138px auto 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.3);
+  background: white url(../images/bg-pattern-mobile.svg) 50% 0 no-repeat;
+}
+
+@media (min-width: 60rem) {
+  .card {
+    width: 60rem;
+    height: 32rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    overflow: hidden;
+    margin: 0;
+    background: white url(../images/bg-pattern-desktop.svg) -36rem -18rem no-repeat;
+  }
+}
+
+.card__woman {
+  margin-top: -6.7rem;
+  margin-right: 2rem;
+}
+
+@media (min-width: 60rem) {
+  .card__woman {
+    margin-left: -5rem;
+    margin-top: 0;
+    margin-right: 7rem;
+  }
+}
+
+.card__text-content {
+  min-height: 27rem;
+}
+
+.card__text-content--header {
+  margin: 3rem 0 2.3rem;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+@media (min-width: 60rem) {
+  .card__text-content--header {
+    text-align: start;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.card__text-content--list {
+  list-style: none;
+  padding: 0 1rem 3rem;
+  margin: 0;
+  min-width: 280px;
+}
+
+@media (min-width: 60rem) {
+  .card__text-content--list {
+    width: 21rem;
+    padding: 0;
+  }
+}
+
+.card__text-content--list hr {
+  border: 0;
+  border-top: 1px solid #e7e7e9;
+  margin: 0;
+}
+
+.card__text-content--list--item a {
+  text-decoration: none;
+  color: #1d1e35;
+  font-size: 1.125em;
+  padding: 1.25rem 2rem 1.25rem 0;
+  position: relative;
+  display: block;
+  outline: none;
+}
+
+.card__text-content--list--item a::after {
+  content: url(../images/icon-arrow-down.svg);
+  position: absolute;
+  right: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.card__text-content--list--item a:hover {
+  color: #f47c57;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.card__text-content--list--item a:focus {
+  font-weight: 700;
+}
+
+.card__text-content--list--item a:focus::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.card__text-content--list--item a:focus ~ p {
+  display: block;
+  max-width: 33ch;
+  color: #787887;
+  margin-top: 0;
+}
+
+@media (min-width: 60rem) {
+  .card__text-content--list--item a:focus ~ p {
+    max-width: 45ch;
+  }
+}
+
+.card__text-content--list--item p {
+  display: none;
+  line-height: 1.5em;
+}
+
+.card__text-content--list--item img {
+  float: right;
+}
+/*# sourceMappingURL=style.css.map */
