@@ -144,6 +144,7 @@ body {
   position: relative;
   display: block;
   outline: none;
+  pointer-events: none;
 }
 
 .card__text-content--list--item a::after {
