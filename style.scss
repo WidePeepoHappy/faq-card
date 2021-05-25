@@ -113,6 +113,7 @@ body {
           position: relative;
           display: block;
           outline: none;
+          pointer-events: none;
 
           &::after {
             content: url(../images/icon-arrow-down.svg);
