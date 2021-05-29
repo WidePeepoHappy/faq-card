@@ -187,6 +187,7 @@ body {
 .card__text-content .details[open] .details__summary::after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
 }
 
 .card__text-content .details p {
