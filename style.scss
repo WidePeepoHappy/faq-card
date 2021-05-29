@@ -12,6 +12,7 @@ $dividers: hsl(240, 5%, 91%);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -118,18 +119,25 @@ body {
         position: relative;
         outline: none;
 
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        @media (min-width: 1600px) {
+          &:hover {
+            color: $textHover;
+            transition: 0.2s ease;
+            cursor: pointer;
+          }
+        }
+
         &::after {
           content: url(../images/icon-arrow-down.svg);
           position: absolute;
+          top: 1rem;
           right: 0;
 
-          transition: all 0.3s;
-        }
-
-        &:hover {
-          color: $textHover;
-          transition: all 0.2s ease-in-out;
-          cursor: pointer;
+          transition: transform 0.3s ease;
         }
       }
 
