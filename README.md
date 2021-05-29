@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/WidePeepoHappy/faq-card.git)
-- Live Site URL: [Add live site URL here](https://widepeepohappy.github.io/faq-card/)
+- Solution URL: [GitHub](https://github.com/WidePeepoHappy/faq-card.git)
+- Live Site URL: [GitHub pages](https://widepeepohappy.github.io/faq-card/)
 
 ## My process
 
