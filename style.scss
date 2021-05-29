@@ -8,153 +8,161 @@ $textHover: hsl(14, 88%, 65%);
 $textSecondary: hsl(240, 6%, 50%);
 $dividers: hsl(240, 5%, 91%);
 
-body {
+* {
   box-sizing: border-box;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   font-family: "Kumbh Sans", sans-serif;
   font-size: 12px;
   background: linear-gradient($gradientTop, $gradientBottom);
 }
 
 .card-box-container {
+  display: flex;
+  justify-content: center;
   position: relative;
-  @media (min-width: 60rem) {
+  width: 980px;
+  @media (min-width: 900px) {
     height: 32rem;
   }
   .box {
     display: none;
-    @media (min-width: 67rem) {
+    @media (min-width: 900px) {
       display: block;
       position: absolute;
       z-index: 100;
-      left: -5.8rem;
+      left: -2.75rem;
       top: 13rem;
     }
   }
 }
 
 .card {
-  position: relative;
-  width: 327px;
-  margin: 138px auto 30px;
+  max-width: 1000px;
+  width: 90%;
+  margin: 120px auto 30px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
   border-radius: 20px;
   box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.3);
   background: white url(../images/bg-pattern-mobile.svg) 50% 0 no-repeat;
 
-  @media (min-width: 67rem) {
-    width: 60rem;
+  @media (min-width: 900px) {
     height: 32rem;
     flex-direction: row;
     overflow: hidden;
-    margin: 0;
+    margin: 0 auto;
     background: white url(../images/bg-pattern-desktop.svg) -36rem -18rem
       no-repeat;
   }
 
-  @media (min-width: 659px) and (max-width: 1071px) {
-    margin-top: 50px;
-  }
-
   &__woman {
-    margin-top: -6.7rem;
-    margin-right: 2rem;
+    margin: -8rem 2rem 0 0;
 
-    @media (min-width: 67rem) {
-      margin-left: -5rem;
-      margin-top: 0;
-      margin-right: 7rem;
+    @media (min-width: 900px) {
+      margin: 0 4rem 0 -6rem;
     }
   }
 
   &__text-content {
+    width: 100%;
     min-height: 27rem;
+
+    @media (min-width: 420px) {
+      padding: 0 20px;
+    }
+
+    @media (min-width: 500px) {
+      padding: 0 50px;
+    }
+
+    @media (min-width: 780px) {
+      padding: 0 100px;
+    }
+
+    @media (min-width: 900px) {
+      width: auto;
+      padding: 0;
+    }
+
     &--header {
       margin: 3rem 0 2.3rem;
       text-align: center;
       font-size: 2.5em;
-      @media (min-width: 67rem) {
+      @media (min-width: 900px) {
         text-align: start;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
       }
     }
-    &--list {
-      list-style: none;
-      padding: 0 1rem 3rem;
-      margin: 0;
-      min-width: 280px;
 
-      @media (min-width: 67rem) {
-        width: 21rem;
-        padding: 0;
-      }
+    hr {
+      border: 0;
+      border-top: 1px solid $dividers;
+    }
 
-      hr {
-        border: 0;
-        border-top: 1px solid $dividers;
-        margin: 0;
-      }
+    .details {
+      &__summary {
+        list-style: none;
+        color: $textMain;
+        font-size: 1.125em;
+        padding: 1rem 2rem 1rem 0;
+        position: relative;
+        outline: none;
 
-      &--item {
-        a {
-          text-decoration: none;
-          color: $textMain;
-          font-size: 1.125em;
-          padding: 1.25rem 2rem 1.25rem 0;
-          position: relative;
-          display: block;
-          outline: none;
-          pointer-events: none;
+        &::after {
+          content: url(../images/icon-arrow-down.svg);
+          position: absolute;
+          right: 0;
 
-          &::after {
-            content: url(../images/icon-arrow-down.svg);
-            position: absolute;
-            right: 0;
-
-            transition: all 0.3s;
-          }
-
-          &:hover {
-            color: $textHover;
-            transition: all 0.2s ease-in-out;
-          }
-
-          &:focus {
-            font-weight: 700;
-          }
-
-          &:focus::after {
-            transform: rotate(180deg);
-          }
-
-          &:focus ~ p {
-            display: block;
-            max-width: 33ch;
-            color: $textSecondary;
-            margin-top: 0;
-
-            @media (min-width: 67rem) {
-              max-width: 45ch;
-            }
-          }
+          transition: all 0.3s;
         }
 
-        p {
-          display: none;
-          line-height: 1.5em;
+        &:hover {
+          color: $textHover;
+          transition: all 0.2s ease-in-out;
+          cursor: pointer;
+        }
+      }
+
+      &[open] {
+        .details__summary {
+          font-weight: 700;
         }
 
-        img {
-          float: right;
+        .details__summary::after {
+          transform: rotate(180deg);
+        }
+      }
+
+      p {
+        line-height: 1.5em;
+        max-width: 33ch;
+        color: $textSecondary;
+        margin-bottom: 1rem;
+
+        @media (min-width: 420px) {
+          max-width: 45ch;
+        }
+
+        @media (min-width: 500px) {
+          max-width: 45ch;
+        }
+
+        @media (min-width: 780px) {
+          max-width: 45ch;
+        }
+
+        @media (min-width: 900px) {
+          max-width: 45ch;
         }
       }
     }

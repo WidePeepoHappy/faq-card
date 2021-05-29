@@ -20,7 +20,7 @@
       <div class="card">
         <picture class="card__woman">
           <source
-            media="(max-width: 1071px)"
+            media="(max-width: 899px)"
             srcset="./images/illustration-woman-online-mobile.svg"
           />
           <img
@@ -30,7 +30,57 @@
         </picture>
         <div class="card__text-content">
           <h1 class="card__text-content--header">FAQ</h1>
-          <ul class="card__text-content--list">
+          <details class="details" open>
+            <summary class="details__summary">
+              How many team members can I invite?
+            </summary>
+            <p>
+              You can invite up to 2 additional users on the Free plan. There is
+              no limit on team members for the Premium plan.
+            </p>
+          </details>
+          <hr />
+          <details class="details">
+            <summary class="details__summary">
+              What is the maximum file upload size?
+            </summary>
+            <p>
+              No more than 2GB. All files in your account must fit your allotted
+              storage space.
+            </p>
+          </details>
+          <hr />
+          <details class="details">
+            <summary class="details__summary">
+              How do I reset my password?
+            </summary>
+            <p>
+              Click “Forgot password” from the login page or “Change password”
+              from your profile page. A reset link will be emailed to you.
+            </p>
+          </details>
+          <hr />
+          <details class="details">
+            <summary class="details__summary">
+              Can I cancel my subscription?
+            </summary>
+            <p>
+              Yes! Send us a message and we’ll process your request no questions
+              asked.
+            </p>
+          </details>
+          <hr />
+          <details class="details">
+            <summary class="details__summary">
+              Do you provide additional support?
+            </summary>
+            <p>
+              Chat and email support is available 24/7. Phone lines are open
+              during normal business hours.
+            </p>
+          </details>
+          <hr />
+          <!-- <ul class="card__text-content--list">
             <li class="card__text-content--list--item">
               <a class="question" href="#"
                 >How many team members can I invite?</a
@@ -78,9 +128,11 @@
               </p>
             </li>
             <hr />
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
+
+    <script src="/script.js"></script>
   </body>
 </html>
